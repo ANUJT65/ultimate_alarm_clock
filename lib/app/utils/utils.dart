@@ -39,7 +39,8 @@ class Utils {
       return eventTime.add(Duration(minutes: offsetDuration));
     }
   }
-
+  // Calculates the number of milliseconds until the alarm time
+  // If the alarm time is before the current time, it adds an extra day to the calculation
 // Adding an extra day since this function is used for scheduling service
   static int getMillisecondsToAlarm(DateTime now, DateTime alarmTime) {
     if (alarmTime.isBefore(now)) {
