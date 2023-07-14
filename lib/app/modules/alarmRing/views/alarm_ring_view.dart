@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'package:ultimate_alarm_clock/app/utils/constants.dart';
 import 'package:ultimate_alarm_clock/app/utils/utils.dart';
 
-import '../controllers/alarm_ring_controller.dart';
+import '../controllers/alarm_ring_controller.dart'; // Importing the controller for this view
 
 class AlarmControlView extends GetView<AlarmControlController> {
   const AlarmControlView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var width = Get.width;
-    var height = Get.height;
+    var width = Get.width; // Retrieving the screen width using Get package
+    var height = Get.height;// Retrieving the screen height using Get package
     return SafeArea(
       child: Scaffold(
           floatingActionButtonLocation:
