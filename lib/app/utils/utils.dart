@@ -30,7 +30,7 @@ class Utils {
   static int timeOfDayToInt(TimeOfDay time) {
     return time.hour * 60 + time.minute;
   }
-
+  // Calculates the offset alarm time based on the event time, offset direction, and duration
   static DateTime calculateOffsetAlarmTime(
       DateTime eventTime, bool isOffsetBefore, int offsetDuration) {
     if (isOffsetBefore) {
