@@ -27,6 +27,7 @@ class AlarmControlController extends GetxController
       Utils.convertTo12HourFormat(Utils.timeOfDayToString(TimeOfDay.now())).obs;
   Timer? _currentTimeTimer;
 
+  // Fetches the currently ringing alarm from the database
   getCurrentlyRingingAlarm() async {
     UserModel? _userModel = await SecureStorageProvider().retrieveUserModel();
     AlarmModel _alarmRecord = Utils.genFakeAlarmModel();
@@ -40,7 +41,7 @@ class AlarmControlController extends GetxController
 
     return latestAlarm;
   }
-
+ // Fetches the next scheduled alarm from the database
   getNextAlarm() async {
     UserModel? _userModel = await SecureStorageProvider().retrieveUserModel();
     AlarmModel _alarmRecord = Utils.genFakeAlarmModel();
@@ -54,7 +55,7 @@ class AlarmControlController extends GetxController
 
     return latestAlarm;
   }
-
+// Starts the snooze functionality
   void startSnooze() {
     isSnoozing.value = true;
     FlutterRingtonePlayer.stop();
